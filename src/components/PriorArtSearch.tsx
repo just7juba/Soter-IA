@@ -91,7 +91,7 @@ export const PriorArtSearch = () => {
   return (
     <div className="max-w-6xl mx-auto space-y-5">
       {/* Search Bar */}
-      <div className="bg-white p-5 rounded-xl border border-slate-100 space-y-4">
+      <div className="bg-white p-5 rounded-xl border border-brown-100 space-y-4">
         <div className="flex gap-3">
           <div className="relative flex-1">
             <input
@@ -100,16 +100,16 @@ export const PriorArtSearch = () => {
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
               placeholder="Recherche d'antériorité sémantique..."
-              className="w-full bg-slate-50 border border-slate-100 rounded-lg py-2.5 pl-9 pr-28 text-sm outline-none focus:border-slate-300 transition-all"
+              className="w-full bg-brown-50 border border-brown-100 rounded-lg py-2.5 pl-9 pr-28 text-sm outline-none focus:border-brown-300 transition-all"
             />
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={14} />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 px-2 py-0.5 bg-blue-50 text-blue-600 text-[11px] font-medium rounded-md">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-brown-400" size={14} />
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 px-2 py-0.5 bg-brown-100 text-brown-600 text-[11px] font-medium rounded-md">
               Sémantique
             </span>
           </div>
           <button
             onClick={handleSearch}
-            className="bg-midnight text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-midnight-light transition-all flex items-center gap-2"
+            className="bg-brown-700 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-brown-800 transition-all flex items-center gap-2"
           >
             {isSearching ? <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> : <Search size={14} />}
             Rechercher
@@ -119,12 +119,12 @@ export const PriorArtSearch = () => {
         <div className="flex items-center justify-between">
           <button
             onClick={() => setShowAdvanced(!showAdvanced)}
-            className="text-xs text-slate-400 hover:text-midnight flex items-center gap-1 transition-colors"
+            className="text-xs text-brown-400 hover:text-brown-700 flex items-center gap-1 transition-colors"
           >
             <Filter size={12} />
             {showAdvanced ? 'Masquer les filtres' : 'Filtres avancés'}
           </button>
-          <span className="text-xs text-slate-300">Bases: USPTO, OEB, WIPO, INPI</span>
+          <span className="text-xs text-brown-300">Bases: USPTO, OEB, WIPO, INPI</span>
         </div>
 
         <AnimatePresence>
@@ -135,20 +135,20 @@ export const PriorArtSearch = () => {
               exit={{ height: 0, opacity: 0 }}
               className="overflow-hidden"
             >
-              <div className="pt-3 grid grid-cols-3 gap-3 border-t border-slate-50">
+              <div className="pt-3 grid grid-cols-3 gap-3 border-t border-brown-50">
                 <div>
-                  <label className="text-[11px] text-slate-400 mb-1 block">Classification (CIB/CPC)</label>
-                  <input type="text" placeholder="ex: G06N 10/00" className="w-full bg-slate-50 border border-slate-100 rounded-lg px-3 py-2 text-xs outline-none focus:border-slate-300" />
+                  <label className="text-[11px] text-brown-400 mb-1 block">Classification (CIB/CPC)</label>
+                  <input type="text" placeholder="ex: G06N 10/00" className="w-full bg-brown-50 border border-brown-100 rounded-lg px-3 py-2 text-xs outline-none focus:border-brown-300" />
                 </div>
                 <div>
-                  <label className="text-[11px] text-slate-400 mb-1 block">Déposant / Inventeur</label>
-                  <input type="text" placeholder="Nom" className="w-full bg-slate-50 border border-slate-100 rounded-lg px-3 py-2 text-xs outline-none focus:border-slate-300" />
+                  <label className="text-[11px] text-brown-400 mb-1 block">Déposant / Inventeur</label>
+                  <input type="text" placeholder="Nom" className="w-full bg-brown-50 border border-brown-100 rounded-lg px-3 py-2 text-xs outline-none focus:border-brown-300" />
                 </div>
                 <div>
-                  <label className="text-[11px] text-slate-400 mb-1 block">Plage de dates</label>
+                  <label className="text-[11px] text-brown-400 mb-1 block">Plage de dates</label>
                   <div className="flex gap-2">
-                    <input type="text" placeholder="De" className="w-1/2 bg-slate-50 border border-slate-100 rounded-lg px-3 py-2 text-xs outline-none focus:border-slate-300" />
-                    <input type="text" placeholder="À" className="w-1/2 bg-slate-50 border border-slate-100 rounded-lg px-3 py-2 text-xs outline-none focus:border-slate-300" />
+                    <input type="text" placeholder="De" className="w-1/2 bg-brown-50 border border-brown-100 rounded-lg px-3 py-2 text-xs outline-none focus:border-brown-300" />
+                    <input type="text" placeholder="À" className="w-1/2 bg-brown-50 border border-brown-100 rounded-lg px-3 py-2 text-xs outline-none focus:border-brown-300" />
                   </div>
                 </div>
               </div>
@@ -161,8 +161,8 @@ export const PriorArtSearch = () => {
         {/* Results */}
         <div className="lg:col-span-2 space-y-3">
           <div className="flex items-center justify-between px-1">
-            <h4 className="text-xs font-medium text-slate-500">Résultats ({results.length})</h4>
-            <select className="bg-transparent text-xs text-slate-500 outline-none">
+            <h4 className="text-xs font-medium text-brown-500">Résultats ({results.length})</h4>
+            <select className="bg-transparent text-xs text-brown-500 outline-none">
               <option>Pertinence</option>
               <option>Date</option>
             </select>
@@ -177,41 +177,41 @@ export const PriorArtSearch = () => {
               onClick={() => setSelectedResult(result)}
               className={cn(
                 "bg-white p-4 rounded-xl border transition-all cursor-pointer",
-                selectedResult?.id === result.id ? "border-blue-200 ring-1 ring-blue-100" : "border-slate-100 hover:border-slate-200"
+                selectedResult?.id === result.id ? "border-brown-300 ring-1 ring-brown-200" : "border-brown-100 hover:border-brown-200"
               )}
             >
               <div className="flex justify-between items-start mb-2">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-[11px] font-medium text-midnight bg-slate-50 px-2 py-0.5 rounded">{result.id}</span>
-                    <span className="text-[11px] text-slate-400">{result.date}</span>
+                    <span className="text-[11px] font-medium text-brown-700 bg-brown-50 px-2 py-0.5 rounded">{result.id}</span>
+                    <span className="text-[11px] text-brown-400">{result.date}</span>
                   </div>
-                  <h5 className="text-sm font-medium text-midnight">{result.title}</h5>
+                  <h5 className="text-sm font-medium text-brown-800">{result.title}</h5>
                 </div>
                 <div className="text-right ml-4">
-                  <div className="text-lg font-bold text-midnight">{(result.similarity * 100).toFixed(0)}%</div>
-                  <div className="text-[11px] text-slate-400">Similarité</div>
+                  <div className="text-lg font-bold text-brown-800">{(result.similarity * 100).toFixed(0)}%</div>
+                  <div className="text-[11px] text-brown-400">Similarité</div>
                 </div>
               </div>
 
-              <p className="text-xs text-slate-500 leading-relaxed mb-3 line-clamp-2">{result.abstract}</p>
+              <p className="text-xs text-brown-500 leading-relaxed mb-3 line-clamp-2">{result.abstract}</p>
 
-              <div className="flex items-center justify-between pt-3 border-t border-slate-50">
-                <div className="flex items-center gap-1 text-xs text-slate-500">
+              <div className="flex items-center justify-between pt-3 border-t border-brown-50">
+                <div className="flex items-center gap-1 text-xs text-brown-500">
                   <CheckCircle2 size={12} className="text-emerald-500" />
                   {result.assignee}
                 </div>
                 <div className="flex items-center gap-1">
                   <button
                     onClick={(e) => { e.stopPropagation(); findSimilar(result.id); }}
-                    className="flex items-center gap-1 px-2 py-1 bg-slate-50 text-slate-600 rounded-md text-[11px] hover:bg-slate-100 transition-all"
+                    className="flex items-center gap-1 px-2 py-1 bg-brown-50 text-brown-600 rounded-md text-[11px] hover:bg-brown-100 transition-all"
                   >
                     <Search size={10} /> Similaires
                   </button>
-                  <button className="p-1.5 text-slate-400 hover:text-midnight rounded-md transition-all">
+                  <button className="p-1.5 text-brown-400 hover:text-brown-700 rounded-md transition-all">
                     <Bookmark size={14} />
                   </button>
-                  <button className="p-1.5 text-slate-400 hover:text-midnight rounded-md transition-all">
+                  <button className="p-1.5 text-brown-400 hover:text-brown-700 rounded-md transition-all">
                     <ExternalLink size={14} />
                   </button>
                 </div>
@@ -221,50 +221,50 @@ export const PriorArtSearch = () => {
         </div>
 
         {/* Analysis Panel */}
-        <div className="bg-midnight text-white p-5 rounded-xl sticky top-4 h-fit">
+        <div className="bg-brown-800 text-white p-5 rounded-xl sticky top-4 h-fit">
           <h4 className="text-xs font-semibold mb-4 flex items-center gap-2">
-            <Zap size={14} className="text-amber-300" />
+            <Zap size={14} className="text-brown-200" />
             Analyse des Effets Techniques
           </h4>
 
           {selectedResult ? (
             <div className="space-y-4">
               <div>
-                <p className="text-[11px] text-amber-300 mb-1">Problème Technique</p>
-                <p className="text-xs text-slate-300 leading-relaxed italic">
+                <p className="text-[11px] text-brown-200 mb-1">Problème Technique</p>
+                <p className="text-xs text-brown-300 leading-relaxed italic">
                   "Comment réduire les vibrations mécaniques dans un environnement cryogénique sans compromettre la stabilité thermique ?"
                 </p>
               </div>
 
               <div className="space-y-2">
-                <p className="text-[11px] text-amber-300">Effets Identifiés</p>
+                <p className="text-[11px] text-brown-200">Effets Identifiés</p>
                 {[
                   { label: 'Isolation Acoustique', value: 'Élevée' },
                   { label: 'Conductivité Thermique', value: 'Optimisée' },
                   { label: 'Stabilité des Qubits', value: '+15%' },
                 ].map((effect, i) => (
                   <div key={i} className="flex items-center justify-between p-2 bg-white/5 rounded-lg">
-                    <span className="text-xs text-slate-400">{effect.label}</span>
-                    <span className="text-xs font-medium text-amber-300">{effect.value}</span>
+                    <span className="text-xs text-brown-300">{effect.label}</span>
+                    <span className="text-xs font-medium text-brown-200">{effect.value}</span>
                   </div>
                 ))}
               </div>
 
               <div className="p-3 bg-white/5 rounded-lg border border-white/10">
-                <p className="text-[11px] text-amber-300 mb-1">Conclusion IA</p>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-[11px] text-brown-200 mb-1">Conclusion IA</p>
+                <p className="text-xs text-brown-300 leading-relaxed">
                   Ce brevet présente un risque d'antériorité majeur pour votre revendication sur le découplage du compresseur.
                 </p>
               </div>
 
-              <button className="w-full bg-white text-midnight py-2.5 rounded-lg text-xs font-medium hover:bg-slate-100 transition-colors">
+              <button className="w-full bg-white text-brown-800 py-2.5 rounded-lg text-xs font-medium hover:bg-brown-50 transition-colors">
                 Générer Rapport Complet
               </button>
             </div>
           ) : (
             <div className="py-10 text-center opacity-50">
-              <FileSearch size={28} className="mx-auto text-slate-500 mb-2" />
-              <p className="text-xs text-slate-400">Sélectionnez un brevet pour analyser</p>
+              <FileSearch size={28} className="mx-auto text-brown-400 mb-2" />
+              <p className="text-xs text-brown-300">Sélectionnez un brevet pour analyser</p>
             </div>
           )}
         </div>

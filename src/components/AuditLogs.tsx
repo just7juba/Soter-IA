@@ -55,59 +55,59 @@ export const AuditLogs = () => {
     <div className="max-w-6xl mx-auto space-y-5">
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="text-base font-semibold text-midnight">Audit & Traçabilité</h3>
-          <p className="text-xs text-slate-400 mt-0.5">Historique de toutes les actions et interactions IA.</p>
+          <h3 className="text-base font-semibold text-brown-800">Audit & Traçabilité</h3>
+          <p className="text-xs text-brown-400 mt-0.5">Historique de toutes les actions et interactions IA.</p>
         </div>
         <div className="flex items-center gap-2">
-          <button className="bg-white border border-slate-100 px-4 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-50 transition-all">
+          <button className="bg-white border border-brown-100 px-4 py-2 rounded-lg text-xs font-medium text-brown-600 hover:bg-brown-50 transition-all">
             Exporter CSV
           </button>
-          <button className="bg-midnight text-white px-4 py-2 rounded-lg text-xs font-medium hover:bg-midnight-light transition-all">
+          <button className="bg-brown-700 text-white px-4 py-2 rounded-lg text-xs font-medium hover:bg-brown-800 transition-all">
             Rapport de Conformité
           </button>
         </div>
       </div>
 
-      <div className="bg-white rounded-xl border border-slate-100 overflow-hidden">
+      <div className="bg-white rounded-xl border border-brown-100 overflow-hidden">
         <table className="w-full text-left">
           <thead>
-            <tr className="bg-slate-50 border-b border-slate-100">
-              <th className="px-4 py-3 text-[11px] font-medium text-slate-400 uppercase tracking-wide">ID</th>
-              <th className="px-4 py-3 text-[11px] font-medium text-slate-400 uppercase tracking-wide">Utilisateur</th>
-              <th className="px-4 py-3 text-[11px] font-medium text-slate-400 uppercase tracking-wide">Action</th>
-              <th className="px-4 py-3 text-[11px] font-medium text-slate-400 uppercase tracking-wide">Ressource</th>
-              <th className="px-4 py-3 text-[11px] font-medium text-slate-400 uppercase tracking-wide">Horodatage</th>
-              <th className="px-4 py-3 text-[11px] font-medium text-slate-400 uppercase tracking-wide">Statut</th>
+            <tr className="bg-brown-50 border-b border-brown-100">
+              <th className="px-4 py-3 text-[11px] font-medium text-brown-400 uppercase tracking-wide">ID</th>
+              <th className="px-4 py-3 text-[11px] font-medium text-brown-400 uppercase tracking-wide">Utilisateur</th>
+              <th className="px-4 py-3 text-[11px] font-medium text-brown-400 uppercase tracking-wide">Action</th>
+              <th className="px-4 py-3 text-[11px] font-medium text-brown-400 uppercase tracking-wide">Ressource</th>
+              <th className="px-4 py-3 text-[11px] font-medium text-brown-400 uppercase tracking-wide">Horodatage</th>
+              <th className="px-4 py-3 text-[11px] font-medium text-brown-400 uppercase tracking-wide">Statut</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-50">
+          <tbody className="divide-y divide-brown-50">
             {AUDIT_LOGS.map((log) => (
-              <tr key={log.id} className="hover:bg-slate-50/50 transition-colors">
+              <tr key={log.id} className="hover:bg-brown-50/50 transition-colors">
                 <td className="px-4 py-3">
-                  <span className="text-xs font-mono text-slate-400">{log.id}</span>
+                  <span className="text-xs font-mono text-brown-400">{log.id}</span>
                 </td>
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded-md bg-slate-100 flex items-center justify-center text-[10px] font-medium text-slate-500">
+                    <div className="w-6 h-6 rounded-md bg-brown-100 flex items-center justify-center text-[10px] font-medium text-brown-600">
                       {log.user.charAt(0)}
                     </div>
-                    <span className="text-sm text-slate-700">{log.user}</span>
+                    <span className="text-sm text-brown-700">{log.user}</span>
                   </div>
                 </td>
                 <td className="px-4 py-3">
-                  <span className="text-sm text-midnight">{log.action}</span>
+                  <span className="text-sm text-brown-800">{log.action}</span>
                 </td>
                 <td className="px-4 py-3">
-                  <span className="text-sm text-slate-500">{log.resource}</span>
+                  <span className="text-sm text-brown-500">{log.resource}</span>
                 </td>
                 <td className="px-4 py-3">
-                  <span className="text-xs text-slate-400">{log.timestamp}</span>
+                  <span className="text-xs text-brown-400">{log.timestamp}</span>
                 </td>
                 <td className="px-4 py-3">
                   <span className={cn(
                     "inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-medium",
                     log.status === 'Succès' ? "bg-emerald-50 text-emerald-600" :
-                    log.status === 'Sécurisé' ? "bg-blue-50 text-blue-600" :
+                    log.status === 'Sécurisé' ? "bg-brown-100 text-brown-700" :
                     "bg-amber-50 text-amber-600"
                   )}>
                     {log.status === 'Succès' ? <CheckCircle2 size={11} /> :
@@ -123,36 +123,36 @@ export const AuditLogs = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-white p-5 rounded-xl border border-slate-100">
+        <div className="bg-white p-5 rounded-xl border border-brown-100">
           <div className="flex items-center gap-2.5 mb-3">
-            <div className="p-2 bg-blue-50 text-blue-600 rounded-lg">
+            <div className="p-2 bg-brown-100 text-brown-600 rounded-lg">
               <Database size={16} />
             </div>
-            <h4 className="text-sm font-medium text-midnight">Souveraineté des Données</h4>
+            <h4 className="text-sm font-medium text-brown-800">Souveraineté des Données</h4>
           </div>
-          <p className="text-xs text-slate-500 leading-relaxed">
+          <p className="text-xs text-brown-500 leading-relaxed">
             Données stockées dans votre instance cloud privée. Aucune donnée utilisée pour l'entraînement externe.
           </p>
         </div>
-        <div className="bg-white p-5 rounded-xl border border-slate-100">
+        <div className="bg-white p-5 rounded-xl border border-brown-100">
           <div className="flex items-center gap-2.5 mb-3">
             <div className="p-2 bg-emerald-50 text-emerald-600 rounded-lg">
               <Shield size={16} />
             </div>
-            <h4 className="text-sm font-medium text-midnight">Chiffrement E2E</h4>
+            <h4 className="text-sm font-medium text-brown-800">Chiffrement E2E</h4>
           </div>
-          <p className="text-xs text-slate-500 leading-relaxed">
+          <p className="text-xs text-brown-500 leading-relaxed">
             AES-256 au repos, TLS 1.3 en transit. Modules de sécurité matériels (HSM) activés.
           </p>
         </div>
-        <div className="bg-white p-5 rounded-xl border border-slate-100">
+        <div className="bg-white p-5 rounded-xl border border-brown-100">
           <div className="flex items-center gap-2.5 mb-3">
-            <div className="p-2 bg-purple-50 text-purple-600 rounded-lg">
+            <div className="p-2 bg-brown-700 text-brown-200 rounded-lg">
               <Clock size={16} />
             </div>
-            <h4 className="text-sm font-medium text-midnight">Politique de Rétention</h4>
+            <h4 className="text-sm font-medium text-brown-800">Politique de Rétention</h4>
           </div>
-          <p className="text-xs text-slate-500 leading-relaxed">
+          <p className="text-xs text-brown-500 leading-relaxed">
             Rétention automatisée de 7 ans. Protocoles de suppression sécurisée actifs.
           </p>
         </div>

@@ -43,13 +43,13 @@ export const ClassSearch = () => {
 
   return (
     <div className="max-w-5xl mx-auto space-y-5">
-      <div className="bg-white p-5 rounded-xl border border-slate-100 space-y-5">
+      <div className="bg-white p-5 rounded-xl border border-brown-100 space-y-5">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="text-base font-semibold text-midnight">Recherche de Classes IP</h3>
-            <p className="text-xs text-slate-400">Classifications internationales (Nice) et brevets (CIB)</p>
+            <h3 className="text-base font-semibold text-brown-800">Recherche de Classes IP</h3>
+            <p className="text-xs text-brown-400">Classifications internationales (Nice) et brevets (CIB)</p>
           </div>
-          <div className="flex bg-slate-50 p-1 rounded-lg border border-slate-100">
+          <div className="flex bg-brown-50 p-1 rounded-lg border border-brown-100">
             {[
               { id: 'All', label: 'Toutes' },
               { id: 'Nice', label: 'Marques (Nice)' },
@@ -61,8 +61,8 @@ export const ClassSearch = () => {
                 className={cn(
                   "px-3 py-1.5 rounded-md text-xs font-medium transition-all",
                   activeType === type.id
-                    ? "bg-white text-midnight shadow-sm"
-                    : "text-slate-400 hover:text-midnight"
+                    ? "bg-white text-brown-800 shadow-sm"
+                    : "text-brown-400 hover:text-brown-700"
                 )}
               >
                 {type.label}
@@ -72,13 +72,13 @@ export const ClassSearch = () => {
         </div>
 
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={14} />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-brown-400" size={14} />
           <input
             type="text"
             placeholder="Rechercher par numéro ou description..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full bg-slate-50 border border-slate-100 rounded-lg py-2.5 pl-9 pr-3 text-sm outline-none focus:border-slate-300 transition-all"
+            className="w-full bg-brown-50 border border-brown-100 rounded-lg py-2.5 pl-9 pr-3 text-sm outline-none focus:border-brown-300 transition-all"
           />
         </div>
 
@@ -90,24 +90,24 @@ export const ClassSearch = () => {
               className={cn(
                 "p-4 rounded-xl border transition-all cursor-pointer",
                 selectedClasses.includes(c.id)
-                  ? "bg-blue-50 border-blue-200"
-                  : "bg-white border-slate-100 hover:border-slate-200"
+                  ? "bg-brown-50 border-brown-300"
+                  : "bg-white border-brown-100 hover:border-brown-200"
               )}
             >
               <div className="flex items-start gap-3">
                 <div className={cn(
                   "w-10 h-10 rounded-lg flex items-center justify-center font-bold text-sm shrink-0",
-                  selectedClasses.includes(c.id) ? "bg-midnight text-white" : "bg-slate-50 text-slate-400"
+                  selectedClasses.includes(c.id) ? "bg-brown-700 text-white" : "bg-brown-50 text-brown-400"
                 )}>
                   {c.id}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between mb-0.5">
-                    <h4 className="text-sm font-medium text-midnight truncate">{c.title}</h4>
-                    {selectedClasses.includes(c.id) && <CheckCircle2 size={14} className="text-blue-600 shrink-0" />}
+                    <h4 className="text-sm font-medium text-brown-800 truncate">{c.title}</h4>
+                    {selectedClasses.includes(c.id) && <CheckCircle2 size={14} className="text-brown-600 shrink-0" />}
                   </div>
-                  <p className="text-[11px] text-slate-400 mb-1">{c.type}</p>
-                  <p className="text-xs text-slate-500 leading-relaxed line-clamp-2">{c.description}</p>
+                  <p className="text-[11px] text-brown-400 mb-1">{c.type}</p>
+                  <p className="text-xs text-brown-500 leading-relaxed line-clamp-2">{c.description}</p>
                 </div>
               </div>
             </div>
@@ -115,18 +115,18 @@ export const ClassSearch = () => {
         </div>
 
         {selectedClasses.length > 0 && (
-          <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+          <div className="pt-4 border-t border-brown-100 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="text-xs text-slate-400">Sélection:</span>
+              <span className="text-xs text-brown-400">Sélection:</span>
               <div className="flex flex-wrap gap-1.5">
                 {selectedClasses.map(id => (
-                  <span key={id} className="px-2 py-0.5 bg-midnight text-white text-[11px] font-medium rounded-md">
+                  <span key={id} className="px-2 py-0.5 bg-brown-700 text-white text-[11px] font-medium rounded-md">
                     Classe {id}
                   </span>
                 ))}
               </div>
             </div>
-            <button className="bg-midnight text-white px-4 py-2 rounded-lg text-xs font-medium hover:bg-midnight-light transition-all">
+            <button className="bg-brown-700 text-white px-4 py-2 rounded-lg text-xs font-medium hover:bg-brown-800 transition-all">
               Utiliser la sélection
             </button>
           </div>
@@ -134,17 +134,17 @@ export const ClassSearch = () => {
       </div>
 
       {/* Info Box */}
-      <div className="bg-midnight text-white p-5 rounded-xl flex items-center gap-5">
-        <div className="w-10 h-10 bg-amber-100 text-amber-700 rounded-lg flex items-center justify-center shrink-0">
+      <div className="bg-brown-800 text-white p-5 rounded-xl flex items-center gap-5">
+        <div className="w-10 h-10 bg-brown-200 text-brown-700 rounded-lg flex items-center justify-center shrink-0">
           <Info size={20} />
         </div>
         <div className="flex-1">
           <h4 className="text-sm font-semibold mb-0.5">Aide à la Classification</h4>
-          <p className="text-xs text-slate-400 leading-relaxed">
+          <p className="text-xs text-brown-300 leading-relaxed">
             Soter IA peut déterminer automatiquement les classes pertinentes en analysant votre description technique.
           </p>
         </div>
-        <button className="bg-white text-midnight px-4 py-2 rounded-lg text-xs font-medium hover:bg-slate-100 transition-all shrink-0">
+        <button className="bg-white text-brown-800 px-4 py-2 rounded-lg text-xs font-medium hover:bg-brown-50 transition-all shrink-0">
           Analyse IA
         </button>
       </div>
